@@ -12,6 +12,10 @@ Here we use an example to illustrate how to reproduce the main results in the pa
 ~~~
 python -m corpora.dd.build_response_gen_dataset
 ~~~
+* If error: `OSError: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a shortcut link, a Python package or a valid path to a data directory.` occurs in the previous step, then run the following command to download `en_core_web_sm`
+```
+python -m spacy download en_core_web_sm
+```
 
 ### Preparing supervised data
 * Download Amazon MTurk annotations on the DailyDialog corpus from [Google Drive](https://drive.google.com/drive/folders/1Y0Gzvxas3lukmTBdAI6cVC4qJ5QM0LBt?usp=sharing) or [Zenodo](https://zenodo.org/record/3828180).
