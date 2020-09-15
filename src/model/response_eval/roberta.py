@@ -30,7 +30,8 @@ class Roberta(nn.Module):
         model_size = config.model_size
         assert model_size in ["base", "large", "large-mnli"]
         from transformers import RobertaForSequenceClassification
-        pretrained = RobertaForSequenceClassification.from_pretrained(f'roberta-{model_size}')
+        pretrained = RobertaForSequenceClassification.from_pretrained(f'roberta-{model_size}',
+                                                                      cache_dir='/scratch/ab8700/torch_cache')
 
         pretrained.resize_token_embeddings(len(tokenizer))
         self.roberta = pretrained.roberta
